@@ -582,8 +582,8 @@ async def pool_for_filters(task_id: str, filters: Dict[str, Any]) -> Optional[Li
 async def handle_audio_pipeline(
     file: UploadFile = File(...),
     task_id: str = Form("demo_task_001"),
-    latitude: Optional[float] = Form(23.718645),
-    longitude: Optional[float] = Form(120.573271),
+    latitude: Optional[float] = Form(25.030154),
+    longitude: Optional[float] = Form(121.527639),
     type: Optional[str] = Form(None),
     target_candidate_id: Optional[str] = Form(None)
 ):

@@ -1,7 +1,19 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git status *)"
+      "Bash(git status *)",
+      "PowerShell(py -0)",
+      "PowerShell(ollama list)",
+      "PowerShell(New-Item -ItemType Directory -Force bc\\\\data | Out-Null; $ProgressPreference='SilentlyContinue'; Invoke-WebRequest https://download.geofabrik.de/asia/taiwan-latest.osm.pbf -OutFile bc\\\\data\\\\taiwan.osm.pbf; \"{0:N1} MB\" -f \\(\\(Get-Item bc\\\\data\\\\taiwan.osm.pbf\\).Length/1MB\\))",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe run_system.py --check)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe bc\\\\build_places.py bc\\\\data\\\\taiwan.osm.pbf --source-url https://download.geofabrik.de/asia/taiwan-latest.osm.pbf)",
+      "PowerShell(Get-Content \"C:\\\\Users\\\\willi\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-willi-FlowCockpit-Integrated-Demo\\\\851ae8b7-e7a7-49c6-adae-c516ec68a5c4\\\\tasks\\\\bod2oce9u.output\" -Tail 8; \"db: \" + \\(Test-Path bc\\\\data\\\\taiwan.sqlite3\\); Get-NetTCPConnection -LocalPort 8000,8001,8002 -State Listen -ErrorAction SilentlyContinue)",
+      "PowerShell($env:PYTHONIOENCODING='utf-8'; .\\\\.venv\\\\Scripts\\\\python.exe run_system.py)",
+      "Bash(curl -sL -o /dev/null -r 0-20000000 -m 30 -w \"http=%{http_code} bytes=%{size_download} speed=%{speed_download}B/s time=%{time_total}s\\\\n\" https://huggingface.co/Systran/faster-whisper-small/resolve/main/model.bin)",
+      "PowerShell($c = Get-NetTCPConnection -LocalPort 8000,8001,8002 -State Listen -ErrorAction SilentlyContinue; if \\($c\\) { $c | Select-Object LocalPort, OwningProcess; $c.OwningProcess | Sort-Object -Unique | ForEach-Object { Get-Process -Id $_ | Select-Object Id, ProcessName, Path } } else { \"ports free\" }; Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias Wi-Fi | Select-Object IPAddress)",
+      "Bash(curl -s -m 120 http://127.0.0.1:8001/api/text -F 'text=找附近的咖啡店' -F latitude=25.030154 -F longitude=121.527639 -F limit=5)",
+      "Bash(PYTHONIOENCODING=utf-8 ./.venv/Scripts/python.exe -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(p['name'], p['district'], p.get\\('distance_m'\\)\\) for p in d.get\\('places',[]\\)] or print\\(d\\)\")",
+      "Bash(PYTHONIOENCODING=utf-8 ./.venv/Scripts/python.exe -c ' *)"
     ]
   }
 }
